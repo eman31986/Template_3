@@ -47,6 +47,54 @@ ul{
     width: 1170px;
     }
 }
+
+.main-title{
+    margin: 100px auto;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+.main-title::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    left: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title:hover::before{
+    content: "";
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after{
+    content: "";
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.main-title::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    right:-30%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title:hover{
+    color: white;
+    border:2px solid white;
+    transition-delay:0.5s ;
+}
 /* End Global Rules */
 
 /* Header */
@@ -280,6 +328,7 @@ ul{
 }
 .landing .go-down i{
     animation: bouncing 1.5s infinite;
+    font-size: 35px;
 }
 
 /* Animation */
@@ -297,5 +346,31 @@ ul{
     }
     40%, 60%{
         transform: translateY(-10px);
+    }
+}
+@keyframes left-move{
+    50%{
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        left: 0;
+        width: 50%;
+        border-radius: 0;
+        height: 100%;
+    }
+}
+@keyframes right-move{
+    50%{
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        right: 0;
+        width: 50%;
+        border-radius: 0;
+        height: 100%;
     }
 }
