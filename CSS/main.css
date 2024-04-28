@@ -1045,6 +1045,139 @@ ul{
     }
 }
 
+/* Pricing Plans */
+.pricing{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .box{
+        position: relative;
+        box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+        transition: var(--main-transition);
+        background-color: white;
+        text-align: center;
+        z-index: 1;
+    }
+    .box::before,
+    .box::after{
+        content: "";
+        width: 0;
+        height: 50%;
+        background-color: #f6f6f6;
+        position: absolute;
+        z-index: -1;
+        transition: var(--transition);
+    }
+    .box::before{
+        content: "";
+        left: 0;
+        top: 0;
+    }
+    .box::after{
+        content: "";
+        right: 0;
+        bottom: 0;
+    }
+    .box:hover::before,
+    .box:hover::after{
+        width: 100%;
+    }
+    @media (min-width:1200px) {
+        .popular{
+            top: -20px;
+        }
+    }
+    .box .title{
+        font-weight: bold;
+        margin: 30px 0;
+        font-size: 25px;
+        letter-spacing: -1px;
+    }
+    .box .img{
+        width: 80px;
+        margin-bottom: 30px;
+    }
+    .box .price{
+        margin-bottom: 20px;
+    }
+    .box .price span:first-child{
+        display: block;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: var(--main-color);
+    }
+    .box .price span:last-child{
+        color: #777;
+    }
+    ul{
+        text-align: left;
+    }
+    ul li{
+        padding: 20px;
+        border-top: 1px solid #eee;
+    }
+    ul li::before{
+        font-family: "Font Awesome 5 Free";
+        content: "\f00c";
+        margin-right: 10px;
+        font-weight: 900;
+        color: var(--main-color);
+    }
+    a{
+        display: block;
+        width: fit-content;
+        border: 2px solid var(--main-color);
+        color: var(--main-color);
+        margin: 30px auto 40px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: var(--transition);
+    }
+    a:hover{
+        background-color: var(--main-color-alt);
+        border-color: var(--main-color);
+        color: white;
+    }
+    .popular .label{
+        position: absolute;
+        writing-mode: vertical-rl;
+        background-color: var(--main-color);
+        color: white;
+        font-weight: bold;
+        padding: 10px 2px 35px 10px;
+        font-size: 18px;
+        width: 40px;
+        right: 8px;
+    }
+    .popular .label::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-style: solid;
+        border-color: transparent transparent white;
+        border-width: 20px;
+    }
+    @media (max-width:767px) {
+        .popular .label{
+            margin-left: 10px;
+        }
+        .popular .label::before{
+            margin-left: 10px;
+        }
+    }
+
+
+}
+
 /* Animation */
 @keyframes up-and-down {
     0%, 100%{
