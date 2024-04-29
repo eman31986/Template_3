@@ -1228,6 +1228,83 @@ ul{
 
 }
 
+/* Stats */
+.stats{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-image: url(../images/stats.jpg);
+    background-size: cover;
+    min-height: 300px;
+
+    h2{
+        font-weight: bold;
+        font-size: 40px;
+        width: fit-content;
+        margin: 0 auto 50px;
+        position: relative;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .box{
+        background-color: white;
+        padding: 30px 15px;
+        text-align: center;
+        position: relative;
+        opacity: 0.8;
+        transition: var(--transition);
+    }
+    .box::before,
+    .box::after{
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: var(--main-color);
+        transition: 1s;
+        height: 0;
+    }
+    .box::before{
+        top: 0;
+        right: 0;
+    }
+    .box::after{
+        left: 0;
+        bottom: 0;
+    }
+    .box:hover::before,
+    .box:hover::after{
+        height: 100%;
+    }
+    .box:hover{
+        opacity: 1;
+    }
+    .box .number{
+        display: block;
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .box .text{
+        color: var(--main-color);
+        font-style: italic;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+.stats::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 /95%);
+}
+
 /* Animation */
 @keyframes up-and-down {
     0%, 100%{
