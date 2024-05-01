@@ -337,7 +337,7 @@ ul{
     width: 100%;
     height: 0;
     overflow: hidden;
-    animation: filling 1s linear infinite;
+    animation: filling 3s linear infinite;
 }
 @media(max-width: 991px){
     .landing .text{
@@ -347,7 +347,7 @@ ul{
 .landing .text h1{
     font-size: 40px;
     margin: 0;
-    letter-spacing: -2px
+    letter-spacing: 2px
 }
 @media(max-width: 767px){
     .landing .text h1{
@@ -1461,6 +1461,7 @@ ul{
             -webkit-text-fill-color: white;
             -webkit-text-stroke: 1px var(--main-color);
             position: relative;
+            letter-spacing: 2px;
         }
         h2::before{
             content: attr(data-text);
@@ -1474,7 +1475,7 @@ ul{
             width: 100%;
             height: 0;
             overflow: hidden;
-            animation: filling 1s linear infinite;
+            animation: filling 3s linear infinite;
         }
 
     }
